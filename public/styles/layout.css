@@ -26,8 +26,32 @@ body {
  */
 
  main {
-   width: 450px;
-   margin: 140px auto auto auto;
-   background-color: white;
-   text-align: center;
+  width: 450px;
+  margin: 70px auto auto auto;
+  background-color: white;
+  padding: 8px;
+  padding-top: 47px;
  }
+
+ .flex-daddy {
+  display: flex;
+  justify-content: space-between;
+}
+
+.new-tweet {
+  border-radius: 18px;
+  background-color: lightgray;
+  padding: 11px;
+  width: 100%;
+}
+
+.h-line {
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
+
+textarea[name] {
+  width: 100%;
+}
+
