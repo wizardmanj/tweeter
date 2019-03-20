@@ -11,6 +11,12 @@
     position: fixed;
 }
 
+.clearfix::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
 #nav-bar .header {
     float: left;
     font-size: 2em;

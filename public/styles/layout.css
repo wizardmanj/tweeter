@@ -25,7 +25,7 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- main {
+main {
   width: 450px;
   margin: 70px auto auto auto;
   background-color: white;
@@ -36,6 +36,15 @@ body {
  .flex-daddy {
   display: flex;
   justify-content: space-between;
+}
+
+.avatar-user {
+  display: flex;
+  justify-content: center;
+}
+
+.name {
+  padding: 14px;
 }
 
 .new-tweet {
@@ -49,9 +58,57 @@ body {
   width: 100%;
   height: 1px;
   background-color: black;
-}
+} 
 
 textarea[name] {
   width: 100%;
 }
+.tweet {  
+  margin-top: 15px;
+  border-radius: 15px;
+  width: 100%;
+  border: solid 1px rgba(128,128,128, .5);
+}
+.tweet:hover {
+  border-color: rgba(128,128,128, 1);
+}
 
+.tweet:hover header {
+  opacity: 1;
+}
+.tweet header{
+  opacity: .5;
+}
+
+.tweet-body {
+  padding: 11px;
+  opacity: 1;
+
+}
+.feelings {
+  display:none;
+}
+
+.tweet:hover .feelings {
+  display: inline-block;
+}
+
+article.tweet header {
+  background-color: #dcdcdc47;  
+  width: 100%;
+  min-height: 3em;
+  align-items: center;
+  padding: 11px;
+  border-top-left-radius: 11px;
+  border-top-right-radius: 11px;
+}
+
+
+article.tweet footer {
+  width: 100%;
+  border-top: solid 1px #ddd; 
+  min-height: 2em;
+  padding-left: 11px;
+  padding-right: 11px;
+  align-items: center;
+}
