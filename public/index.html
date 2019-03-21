@@ -39,40 +39,20 @@
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <hr class="h-line" />
-        <form action="/tweets/" method="POST">
+        <form class="tweet-form">
           <textarea
             class="text-place"
             name="text"
             placeholder="What are you humming about?"
-          ></textarea>
+            value="">
+          </textarea>
           <div class="flex-daddy">
-            <input id="button" type="submit" value="Tweet" />
+            <input id="button" type="submit" value="Tweet"/>
             <span class="counter">140</span>
           </div>
         </form>
       </section>
       <section class="tweet-container">
-        <article class="tweet">
-          <header class="flex-daddy">
-            <div class="avatar-user"> 
-              <img
-                src="https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png"
-              />
-              <span class="name">Mr Nameguy</span>
-            </div>
-            <span>@mrnameguy</span>
-          </header>
-          <div class="tweet-body">
-            <p>
-              Hey, this is my tweet from a million years ago, I'm still a guy
-              and I still have a name. I'm Mr Nameguy!
-            </p>
-          </div>
-          <footer class="flex-daddy">
-            <span>a million years ago</span>
-            <span class="feelings">$@& buttons</span>
-          </footer>
-        </article>
       </section>
     </main>
     <script src="/scripts/composer-char-counter.js"></script>
