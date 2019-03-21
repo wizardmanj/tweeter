@@ -50,21 +50,22 @@ const tweets = [
 function createTweetElement(tweet) {
     const $tweet = $("<article>").addClass("tweet");
     const $header = $('<header>').addClass('flex-daddy');
-    const $label = $('<div>').addClass('avatar-user');
+    const $label = $('<div>').addClass('avatar-user')
         $('<img>').attr('src', tweet.user.avatars.small).appendTo($label);
         $('<span>').addClass('name').text(tweet.user.name).appendTo($label);
-        $('<span>').text(tweet.user.handle).appendTo($label);
+        $label.appendTo($header)
+        $('<span>').text(tweet.user.handle).appendTo($header);
     const $body = $('<div>').addClass('tweet-body');
         $('<p>').text(tweet.content.text).appendTo($body);
     const $footer = $('<footer>').addClass('flex-daddy');
         $('<span>').text(tweet.created_at).appendTo($footer);
         $('<span>').addClass('feelings').text('symbols').appendTo($footer);
 
-    // $tweet.append($header).append($label).append($body).append($footer);
-    $header.appendTo($tweet);
-    $label.appendTo($tweet);
-    $body.appendTo($tweet);
-    $footer.appendTo($tweet);
+    $tweet.append($header).append($body).append($footer);
+    // $header.appendTo($tweet);
+    // $label.appendTo($tweet);
+    // $body.appendTo($tweet);
+    // $footer.appendTo($tweet);
     $('.tweet-container').append($tweet);
     return $tweet;
 };
