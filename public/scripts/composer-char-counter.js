@@ -2,7 +2,7 @@ $(document).ready(function() {
   
   $('.text-place').on('keyup', function () {
     maxChar = 140;
-    counter = this.value.length;
+    counter = $(this).val().length;
     count =  maxChar - counter;
 
     $('.counter').text(count);
