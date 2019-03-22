@@ -42,6 +42,7 @@ const request = (requestOptions, cb) => {
 };
 
 $(document).ready(function() {
+  $('.new-tweet').hide();
   const url = '/tweets/'
   const getOptions = {
     method: 'GET',
@@ -55,9 +56,14 @@ $(document).ready(function() {
       url,
       data: $(this).serialize()
     };
-    if ($('.text-place').val().length > 140 || $('.text-place').val() === null) {
-      alert('Dude... what the fuck?!?!');
+    if ($('.text-place').val().length > 140) {
+     $('.alert-warning').slideDown();
+     $('.error-message').text('Your message is a bit too long!');
+    } else if ($('.text-place').val().trim() === '') {
+      $('.alert-warning').slideDown();
+      $('.error-message').text('That doesn\'t count... try again!');
     } else {
+      $('.alert-warning').hide();
       request(postOptions, function(response) {
         request(getOptions, function(response) {
           renderTweets(response);
@@ -68,6 +74,7 @@ $(document).ready(function() {
       renderTweets(response);
 
     $('.compose-button').on('click', function(event) {
+      $('.alert-warning').hide();
       $('.new-tweet').slideToggle();
       $('.text-place').focus();
     })

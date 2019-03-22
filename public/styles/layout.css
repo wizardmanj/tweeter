@@ -30,7 +30,7 @@ main {
   margin: 70px auto auto auto;
   background-color: white;
   padding: 8px;
-  padding-top: 47px;
+  padding-top: 2px;
  }
 
  .flex-daddy {
@@ -111,4 +111,10 @@ article.tweet footer {
   padding-left: 11px;
   padding-right: 11px;
   align-items: center;
+}
+
+.alert-warning {
+  display: flex;
+  justify-content: center;
+  color: maroon;
 }
