@@ -16,12 +16,20 @@ module.exports = function makeDataHelpers(db) {
     },
 
     // Get all tweets in `db`, sorted by newest first
-    getTweets: function(callback) {
-      simulateDelay(() => {
-        const sortNewestFirst = (a, b) => a.created_at - b.created_at;
-        callback(null, db.tweets.sort(sortNewestFirst));
-      });
-    }
-
-  };
-}
+    getTweets: 
+      function(callback) {
+      // simulateDelay(() => {
+      //   const sortNewestFirst = (a, b) => a.created_at - b.created_at;
+      //   callback(null, db.tweets.sort(sortNewestFirst));
+        // });
+      // });
+      app.get('/tweets', (req, res) => {
+      
+      db.collection("tweets")
+        .find()
+        .toArray()
+        .then(data => res.json(data))
+        .catch(error => res.send(error));
+      })
+  }
+}}
