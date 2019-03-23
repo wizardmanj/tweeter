@@ -2,7 +2,7 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+Built using basic HTML, CSS, JS, jQuery and AJAX; aimed at demonstrating fundamental front-end and back-end skills including server (Node, Express) and basic database management (in-memory, MongoDb).
 
 ## Getting Started
 
@@ -15,3 +15,14 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- Body-parser
+- Chance
+- Express
+- Md5
+- Moment
+- Mongodb
+
+## Screenshots
+- !["Screenshot of Tweeter homepage"](https://github.com/wizardmanj/tweeter/docs/tweeter-homepage.png)
+- !["Screenshot of Compose Box with date, symbols, and word counter"](https://github.com/wizardmanj/tweeter/docs/word-counter.png)
+- !["Screenshot of error for too many words"](https://github.com/wizardmanj/tweeter/docs/too-manny-words.png)

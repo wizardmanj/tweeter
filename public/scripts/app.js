@@ -16,7 +16,6 @@ function createTweetElement(tweet) {
         $('.tweet-container').append($tweet);
         return $tweet;
       };
-      // add moment
       
 const renderTweets = tweets => {
   $('.tweet-container').empty();
