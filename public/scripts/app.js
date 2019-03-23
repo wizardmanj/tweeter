@@ -26,6 +26,16 @@ const renderTweets = tweets => {
   });
 };  
 
+function loadTweets() {
+  $.ajax ({
+    method: 'GET',
+    url: '/tweets'
+  }
+  ).done((response) => {
+    renderTweets(response);
+  })
+};
+
 //creates the AJAX request
 const request = (requestOptions, cb) => {
   $.ajax(requestOptions)
@@ -47,7 +57,6 @@ $(document).ready(function() {
   const getOptions = {
     method: 'GET',
     url,
-    dataType: 'json'
   }
   $('.tweet-form').on('submit', function(event) {
     event.preventDefault();
@@ -65,9 +74,10 @@ $(document).ready(function() {
     } else {
       $('.alert-warning').hide();
       request(postOptions, function(response) {
-        request(getOptions, function(response) {
-          renderTweets(response);
-        });
+        // request(getOptions, function(response) {
+          // renderTweets(response);
+        // });
+        loadTweets();
       });
     }});
     request(getOptions, function(response) {
