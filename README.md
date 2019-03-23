@@ -23,6 +23,6 @@ Built using basic HTML, CSS, JS, jQuery and AJAX; aimed at demonstrating fundame
 - Mongodb
 
 ## Screenshots
-- !["Screenshot of Tweeter homepage"](https://github.com/wizardmanj/tweeter/docs/tweeter-homepage.png)
-- !["Screenshot of Compose Box with date, symbols, and word counter"](https://github.com/wizardmanj/tweeter/docs/word-counter.png)
-- !["Screenshot of error for too many words"](https://github.com/wizardmanj/tweeter/docs/too-manny-words.png)
+- !["Screenshot of Tweeter homepage"](https://github.com/wizardmanj/tweeterAppProject/docs/tweeter-homepage.png)
+- !["Screenshot of Compose Box with date, symbols, and word counter"](https://github.com/wizardmanj/tweeterAppProject/docs/word-counter.png)
+- !["Screenshot of error for too many words"](https://github.com/wizardmanj/tweeterAppProject/docs/too-manny-words.png)
