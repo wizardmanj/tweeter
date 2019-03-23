@@ -9,13 +9,14 @@ function createTweetElement(tweet) {
     const $body = $('<div>').addClass('tweet-body');
         $('<p>').text(tweet.content.text).appendTo($body);
         const $footer = $('<footer>').addClass('flex-daddy');
-        $('<span>').text(tweet.created_at).appendTo($footer);
-        $('<span>').addClass('feelings').text('symbols').appendTo($footer);
+          $('<span>').text(moment(tweet.created_at).fromNow()).appendTo($footer);
+          $('<span>').addClass('feelings').text('symbols').appendTo($footer);
         
         $tweet.append($header).append($body).append($footer);
         $('.tweet-container').append($tweet);
         return $tweet;
       };
+      // add moment
       
 const renderTweets = tweets => {
   $('.tweet-container').empty();
@@ -25,16 +26,6 @@ const renderTweets = tweets => {
     $('.tweet-container').append(createTweetElement(tweetObj));
   });
 };  
-
-function loadTweets() {
-  $.ajax ({
-    method: 'GET',
-    url: '/tweets'
-  }
-  ).done((response) => {
-    renderTweets(response);
-  })
-};
 
 //creates the AJAX request
 const request = (requestOptions, cb) => {
@@ -74,12 +65,12 @@ $(document).ready(function() {
     } else {
       $('.alert-warning').hide();
       request(postOptions, function(response) {
-        // request(getOptions, function(response) {
-          // renderTweets(response);
-        // });
-        loadTweets();
+        request(getOptions, function(response) {
+          renderTweets(response);
+        });
       });
     }});
+
     request(getOptions, function(response) {
       renderTweets(response);
 
@@ -87,6 +78,6 @@ $(document).ready(function() {
       $('.alert-warning').hide();
       $('.new-tweet').slideToggle();
       $('.text-place').focus();
-    })
+      });
     });
   });

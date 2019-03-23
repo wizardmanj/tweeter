@@ -22,7 +22,6 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
   app.use(express.static("public"));
   
   const DataHelpers = require("./lib/data-helpers.js")(db);
-  
   const tweetsRoutes = require("./routes/tweets")(DataHelpers);
   
   app.use("/tweets", tweetsRoutes);
