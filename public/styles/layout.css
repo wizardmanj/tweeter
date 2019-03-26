@@ -21,10 +21,7 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
+/* CSS for main page elements */
 main {
   width: 450px;
   margin: 70px auto auto auto;
@@ -91,6 +88,7 @@ textarea[name] {
 
 .tweet:hover .feelings {
   display: inline-block;
+  color: #00a087; 
 }
 
 article.tweet header {

@@ -1,32 +1,38 @@
+//This generates a new tweet element; including all of the formatting for HTML content
+
 function createTweetElement(tweet) {
     const $tweet = $("<article>").addClass("tweet");
     const $header = $('<header>').addClass('flex-daddy');
-    const $label = $('<div>').addClass('avatar-user')
+    const $label = $('<div>').addClass('avatar-user');
         $('<img>').attr('src', tweet.user.avatars.small).appendTo($label);
         $('<span>').addClass('name').text(tweet.user.name).appendTo($label);
-        $label.appendTo($header)
+        $label.appendTo($header);
         $('<span>').text(tweet.user.handle).appendTo($header);
     const $body = $('<div>').addClass('tweet-body');
         $('<p>').text(tweet.content.text).appendTo($body);
         const $footer = $('<footer>').addClass('flex-daddy');
           $('<span>').text(moment(tweet.created_at).fromNow()).appendTo($footer);
-          $('<span>').addClass('feelings').text('symbols').appendTo($footer);
-        
+    const $icons= $('<span>').addClass('feelings');
+          $('<i>').addClass('fas fa-flag').appendTo($icons);
+          $('<i>').addClass("fas fa-retweet").appendTo($icons);
+          $('<i>').addClass('fas fa-heart').appendTo($icons);
+        $icons.appendTo($footer);
         $tweet.append($header).append($body).append($footer);
         $('.tweet-container').append($tweet);
         return $tweet;
-      };
-      
+      };     
+
+//This function renders all of the tweets, sorting them beggining with most recent
 const renderTweets = tweets => {
   $('.tweet-container').empty();
-  const newTweet = tweets.sort((a,b)=> b.created_at - a.created_at)
+  const newTweet = tweets.sort((a,b)=> b.created_at - a.created_at);
   
   $.each(tweets, function(index, tweetObj) {
     $('.tweet-container').append(createTweetElement(tweetObj));
   });
 };  
 
-//creates the AJAX request
+//Modular function for handling AJAX requests
 const request = (requestOptions, cb) => {
   $.ajax(requestOptions)
   
@@ -41,6 +47,8 @@ const request = (requestOptions, cb) => {
   });
 };
 
+//This indicates all of the functionality to be run once
+//the document has initially loaded.
 $(document).ready(function() {
   $('.new-tweet').hide();
   const url = '/tweets/'

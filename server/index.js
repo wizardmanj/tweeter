@@ -9,6 +9,9 @@ const app           = express();
 const {MongoClient} = require("mongodb");
 const MONGODB_URI = "mongodb://localhost:27017/tweeter";
 
+
+//Mongo client with relevant module exports to handle helper 
+//functions that modify content and access database
 MongoClient.connect(MONGODB_URI, (err, db) => {
   
   if (err) {
@@ -21,7 +24,10 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(express.static("public"));
   
+  //This allows us to interact with the database
   const DataHelpers = require("./lib/data-helpers.js")(db);
+  
+  //This imports the routing for the server
   const tweetsRoutes = require("./routes/tweets")(DataHelpers);
   
   app.use("/tweets", tweetsRoutes);
